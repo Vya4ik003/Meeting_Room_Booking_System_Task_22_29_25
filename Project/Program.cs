@@ -1,3 +1,5 @@
+using Project.Services;
+
 namespace Project
 {
     public class Program
@@ -9,6 +11,8 @@ namespace Project
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddSingleton<IMeetingRoomService, MeetingRoomService>();
 
             var app = builder.Build();
 
