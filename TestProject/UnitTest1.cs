@@ -8,8 +8,9 @@ namespace TestProject
         [Fact]
         public void BookTest()
         {
-            MeetingRoomService roomService = new MeetingRoomService();  //исправил
+            MeetingRoomService roomService = new MeetingRoomService();
             roomService.BookRoom("Innokentiq", DateTime.Today);
+            Assert.Equal(new MeetingRoom("Innokentiq", DateTime.Today), roomService.meetingRooms[0]);
         }
 
         [Fact]
@@ -17,8 +18,8 @@ namespace TestProject
         {
             MeetingRoomService roomService = new MeetingRoomService();
             roomService.BookRoom("Innokentiq", DateTime.Today);
-            roomService.IsFree(DateTime.Today.AddDays(1), DateTime.Today.AddDays(-1));
-            Assert.True(true);
+            bool truth = roomService.IsFree(DateTime.Today.AddDays(1), DateTime.Today.AddDays(-1));
+            Assert.True(truth);
         }
 
         [Fact]
