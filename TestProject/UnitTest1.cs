@@ -8,7 +8,7 @@ namespace TestProject
         [Fact]
         public void BookTest()
         {
-            MeetingRoomService roomService = new MeetingRoomService();
+            MeetingRoomService roomService = new MeetingRoomService();  //исправил
             roomService.BookRoom("Innokentiq", DateTime.Today);
         }
 
