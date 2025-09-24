@@ -2,12 +2,12 @@
 {
     public record MeetingRoom
     {
-        private string _name;
+        public string Name;
         public DateTime DateTime { get; init; }
 
         public MeetingRoom(string name, DateTime dateTime)
         {
-            _name = name;
+            Name = name;
             DateTime = dateTime;
         }
     }
